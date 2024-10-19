@@ -14,8 +14,6 @@ files[] = {"id":"38412813-3dba122d-8ffe-49d1-a37b-f75c847d6908","path":"MarkLogi
 [config.relations.collections.metaData]
 
 [config.relations.apiDefinition]
-files[] = {"path":"index.yaml","metaData":{}}
 
 [config.relations.apiDefinition.metaData]
 type = openapi:3
-rootFiles[] = index.yaml

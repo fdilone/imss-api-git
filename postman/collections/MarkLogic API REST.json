@@ -2205,6 +2205,231 @@
 			],
 			"id": "28b83f0c-baa4-494a-89d2-2a809176b986",
 			"description": "The `/manage/v2/users/[id-or-name]/properties` endpoint lets you query information about the user that exists in MarkLogic"
+		},
+		{
+			"name": "establecimientos",
+			"item": [
+				{
+					"name": "establecimientos",
+					"id": "4ced7a83-c0fc-46d3-893d-d005c53e983e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "digest",
+							"digest": [
+								{
+									"key": "password",
+									"value": "semantiq10",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "string"
+								},
+								{
+									"key": "disableRetryRequest",
+									"value": false,
+									"type": "boolean"
+								},
+								{
+									"key": "algorithm",
+									"value": "MD5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://194.163.189.17:8011/v1/documents?uri=/data/te_cat_establecimientosd31494df-d389-42c3-a9fd-f5325b0e2888.json",
+							"protocol": "http",
+							"host": [
+								"194",
+								"163",
+								"189",
+								"17"
+							],
+							"port": "8011",
+							"path": [
+								"v1",
+								"documents"
+							],
+							"query": [
+								{
+									"key": "uri",
+									"value": "/data/te_cat_establecimientosd31494df-d389-42c3-a9fd-f5325b0e2888.json"
+								}
+							]
+						},
+						"description": "### **Description**\n\nThis endpoint retrieves the properties of a specific user in a specified format. The response returned is in JSON format and includes the user's name, description, roles in MarkLogc and rol for app.\n\nNote: the user must exist in MarkLogic and it can be searched by name or id"
+					},
+					"response": [
+						{
+							"id": "fec3496c-2c13-415a-9bd3-3ae05b406906",
+							"name": "Successful Response",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://{{ip_address}}:{{port_1}}/v1/_userProperties.sjs?user={{user}}",
+									"protocol": "http",
+									"host": [
+										"{{ip_address}}"
+									],
+									"port": "{{port_1}}",
+									"path": [
+										"v1",
+										"_userProperties.sjs"
+									],
+									"query": [
+										{
+											"key": "user",
+											"value": "{{user}}"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text",
+									"uuid": "604e6c22-4eea-4ce4-b452-09242194f1dc"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user-name\": \"hub-central-developer\",\n    \"description\": \"user to login at IMSS project\",\n    \"role\": [\n        \"hub-central-developer\",\n        \"data-hub-developer\",\n        \"pii-reader\"\n    ]\n}"
+						},
+						{
+							"id": "e2a5e34c-4556-4dc8-aa51-edaafba29129",
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{ip_address}}:{{port_1}}/v1/_userProperties.sjs?user={{user}}",
+									"protocol": "http",
+									"host": [
+										"{{ip_address}}"
+									],
+									"port": "{{port_1}}",
+									"path": [
+										"v1",
+										"_userProperties.sjs"
+									],
+									"query": [
+										{
+											"key": "user",
+											"value": "{{user}}"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text",
+									"uuid": "4a9bd711-9179-474f-8b82-6adcf31aefa7"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n  \"errorResponse\": {\r\n    \"statusCode\": 401,\r\n    \"status\": \"Unauthorized\",\r\n    \"message\": \"401 Unauthorized\"\r\n  }\r\n}"
+						},
+						{
+							"id": "d1e669ec-1856-4582-bc71-1fdbf44a8fd2",
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{ip_address}}:{{port_1}}/v1/_userProperties.sjs?user={{user}}",
+									"protocol": "http",
+									"host": [
+										"{{ip_address}}"
+									],
+									"port": "{{port_1}}",
+									"path": [
+										"v1",
+										"_userProperties.sjs"
+									],
+									"query": [
+										{
+											"key": "user",
+											"value": "{{user}}"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text",
+									"uuid": "67b3553e-8de9-4fe5-a4f0-4665595b8eea"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						},
+						{
+							"id": "57cfa720-c726-4749-844c-29d12e6ebdaa",
+							"name": "Bad Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://{{ip_address}}:{{port_1}}/v1/_userProperties.sjs?user={{user}}",
+									"protocol": "http",
+									"host": [
+										"{{ip_address}}"
+									],
+									"port": "{{port_1}}",
+									"path": [
+										"v1",
+										"_userProperties.sjs"
+									],
+									"query": [
+										{
+											"key": "user",
+											"value": "{{user}}"
+										}
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": "",
+									"type": "text",
+									"uuid": "01620a38-7c57-4779-b64f-c878bb1a594a"
+								}
+							],
+							"cookie": [],
+							"body": "{\r\n    \"errorResponse\": {\r\n        \"statusCode\": 400,\r\n        \"status\": \"Bad Request\",\r\n        \"messageCode\": \"XDMP-RWINVAL\",\r\n        \"message\": \"XDMP-RWINVAL: message\"\r\n    }\r\n}"
+						}
+					]
+				}
+			],
+			"id": "67e12f7c-83bd-4534-a708-d66dc2cd4ec5",
+			"description": "The `/manage/v2/users/[id-or-name]/properties` endpoint lets you query information about the user that exists in MarkLogic"
 		}
 	]
 }
